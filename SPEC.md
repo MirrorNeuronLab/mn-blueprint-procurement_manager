@@ -84,6 +84,8 @@ and deletion do not clear job data.
 
 ## Output Contract
 
+The optional static purchase review projects assessment, comparison evidence and open decisions from the saved packet. A quote remains linked to its supplier and evidence reference. A planning estimate retains its qualification. Publish its verified `web_ui.json` only after the page is available.
+
 The default host output folder is
 `~/Downloads/procurement-manager`, matching the declared job name. Previously
 submitted jobs retain their configured destination.

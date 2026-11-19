@@ -112,6 +112,8 @@ outputs remain run-scoped.
 
 ## Outputs
 
+Open the purchase review to see the recommendation, supplier comparison, evidence references and outstanding approval conditions. The report labels fictional quotes in mock cases. The same review is saved at `web/index.html`.
+
 OtterDesk shows the saved report directly in Chat. Start with **Decision brief**:
 the proposed option (or why none qualifies), comparable costs and the decisive
 tradeoff. **Your next decision** explains the question, why it matters now and

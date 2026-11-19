@@ -1,5 +1,12 @@
 {
   "$schema": "https://mirrorneuron.io/schemas/blueprint/v1/extensions/ui.schema.json",
+  "web_ui": {
+    "enabled": true,
+    "adapter": "static_html",
+    "kind": "output",
+    "title": "Purchase review",
+    "description": "Review the purchase assessment, supplier evidence and terms that still need checking."
+  },
   "starter_questions": [
     "Can I try the fictional offline quote comparison?",
     "What purchase brief and must-have requirements do you need?",
@@ -7,19 +14,19 @@
   ],
   "setup_guide": {
     "schema": "otterdesk.setup_guide.v1",
-    "introduction": "I'll compare purchase options and explain the costs, tradeoffs and missing evidence. Start with what you need to buy and what it must achieve, or try the fictional offline quote sample. You'll review the comparison and the next decision; I won't contact suppliers or place orders.",
+    "introduction": "Try the fictional workstation quotes to see how price and missing terms affect a purchase decision. For your own comparison, tell me what you need to buy and what it must achieve.",
     "sample": {
       "available": true,
       "title": "Simulation: GPU workstation quotes",
-      "description": "Compare three fictional suppliers and their 36-month known costs entirely offline. This sample prepares a review packet; communication and ordering are not performed.",
-      "expected_output": "After the offline sample completes, a simulated comparison showing Cedar’s lower known cost over 36 months, the required reviews and Delta’s missing quote.",
+      "description": "Compare three fictional vendors’ workstation quotes offline.",
+      "expected_output": "A 36-month cost comparison showing how the missing quote and review requirements affect the choice.",
       "values": {
         "inputs.payload.item_description": "Compare five GPU workstations from three fictional suppliers for sensitive internal datasets.",
         "inputs.payload.input_folder": "@/examples/procurement_case"
       }
     },
     "real": {
-      "introduction": "Describe the purchase and the outcome you need. Include quantity, must-have requirements and any firm budget or deadline you already know. Unknown details can stay open for an exploratory comparison.",
+      "introduction": "Describe the purchase and the outcome you need. Include a firm budget or deadline if you have one.",
       "values": {
         "inputs.payload.input_folder": "",
         "inputs.payload.item_description": ""
@@ -89,6 +96,12 @@
         "description": "Manage explicit preferences and working rules in Chat > Memory. Applies to future runs."
       }
     ],
-    "prompt_file": "@/payloads/prompts/setup.md"
+    "prompt_file": "@/payloads/prompts/setup.md",
+    "run_guidance": {
+      "on_start": "I’ll compare requirements, known costs and missing terms so you can see which options are ready for review.",
+      "report_ready": "Expand the report and start with the Decision brief to see which purchase terms still need checking.",
+      "output_ready": "Open procurement_manager_report.md and read the Decision brief before comparing the quoted costs.",
+      "web_ui_ready": "Open the purchase review and compare the quote evidence behind the next decision."
+    }
   }
 }

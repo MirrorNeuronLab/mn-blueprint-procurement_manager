@@ -110,6 +110,9 @@ def publish_documents(block, final_artifact, result):
             content, sort_keys=True, ensure_ascii=False, allow_nan=False).encode("utf-8")
         writes.append(ArtifactWrite(name, path, encoded, kind=kind, authoritative=kind == "json"))
     receipt = publish_artifact_bundle(block, writes, receipt_path=block.root + "/publication.json")
+    if block.config.get("web_ui", {}).get("enabled") is not False:
+        from .web_report import publish
+        publish(block, final_artifact)
     publish_outputs(output_dir, final_artifact["run_id"])
     return receipt
 

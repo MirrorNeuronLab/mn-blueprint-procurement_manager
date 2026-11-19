@@ -269,12 +269,14 @@
         "artifact_id": "web_ui",
         "mime_type": "application/json",
         "path": "web_ui.json",
-        "producer": "web_ui",
+        "producer": "workflow",
         "schema_version": "mn.blueprint.web_ui.v1",
         "source_refs": [
-          "run.json"
+          "web/index.html"
         ],
-        "type": "web_ui"
+        "type": "web_ui",
+        "required": false,
+        "privacy": "confidential"
       },
       {
         "artifact_id": "human_events",
@@ -392,6 +394,18 @@
           "procurement_manager.json"
         ],
         "type": "generated_report"
+      },
+      {
+        "artifact_id": "web_report",
+        "path": "web/index.html",
+        "mime_type": "text/html",
+        "type": "web_report",
+        "required": false,
+        "privacy": "confidential",
+        "source_refs": [
+          "final_artifact.json",
+          "evidence.json"
+        ]
       }
     ],
     "primary": {

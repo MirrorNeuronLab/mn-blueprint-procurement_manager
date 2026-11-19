@@ -674,7 +674,6 @@
         "llm_retries"
       ]
     },
-    "enabled": true,
     "input": {
       "adapter": "none",
       "custom_url": null,
@@ -683,13 +682,6 @@
       "instructions": null,
       "port": null,
       "share": false,
-      "title": null
-    },
-    "output": {
-      "adapter": "gradio",
-      "auto_generate": true,
-      "custom_url": null,
-      "refresh_seconds": 2,
       "title": null
     }
   }
